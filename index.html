@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+
+    <title>The Tipulator</title>
+  </head>
+  <body>
+    <div class="container">
+        <div class="row">
+          <div class="col-md"></div>
+          <div class="col-12 col-md-8">
+            <div class="d-flex justify-content-center">
+                <img src="tipulator_logo.png" alt="logo" id="logo">
+            </div>
+            <div id="introBlurb">
+                <h2>Helping you help the people that serve you best.</h2>
+                <br>
+                <div>
+                    <p>Our quick and easy tip calculator will help you work out how much you should pay.</p>
+                    <p>Simply type in the bill total, the quality of service and how many people are splitting the bill. We'll do the rest!</p>
+                </div>
+            </div>
+            <a id="getStarted" class="btn btn-primary btn-lg d-flex justify-content-center" href="#tipCalculator" role="button" value="Show Div" onclick="showDiv()">Start now!</a>
+            <div id="tipCalculator"  style="display:none;">
+                <form id="bill">
+                    <div class="form-group">
+                        <label>How much was the bill?</label>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text">£</span>
+                            </div>
+                            <input id="netPrice" type="number" min="1" step="any" class="form-control" aria-label="Amount (to the nearest pound)">
+                          </div>
+                      </div>
+                    <div class="form-group">
+                      <label>How was the service?</label>
+                      <select class="form-control" id="qualityOfService">
+                        <option value="none">Select</option>
+                        <option value="0">Awful</option>
+                        <option value="0.025">Ok</option>
+                        <option value="0.05">Good</option>
+                        <option value="0.1">Great</option>
+                        <option value="0.15">Faultless</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlTextarea1">How many people are you splitting the bill with?</label>
+                      <input type="number" min="1" class="form-control" id="headcount" rows="1" placeholder="1"></input>
+                    </div>
+                  </form>
+                  <a id="calculateButton" class="btn btn-success btn-lg btn-block" href="#totalSummary" role="button" type="submit">Calculate!</a>
+                  
+                  <div id="totalSummary" style="display:none;">
+                    <div class="card">
+                        <div class="card-header">
+                          Your Total:
+                        </div>
+                        <div id="tipTotal" class="card-body">
+                            <p>Your Total Bill: £<span id="complete_total">0.00</span></p>
+                            <p>Your Total Tip: £<span id="total_tip">0.00</span></p>
+                            <br>
+                            <p>Individual Total: £<span id="individual_total">0.00</span> each</p>
+                            <p>Individual Tip: £<span id="individual_tip">0.00</span> each</p>
+                        </div>
+                      </div> 
+                  </div>
+            </div>
+        </div>
+          <div class="col-md"></div>
+        </div>
+    </div>
+
+    <!-- JS scripts -->
+    <script src="tpCalculator.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </body>
+</html>
